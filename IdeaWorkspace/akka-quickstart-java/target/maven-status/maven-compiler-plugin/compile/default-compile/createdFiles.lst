@@ -1,7 +1,0 @@
-com\lightbend\akka\sample\SetRequestActor.class
-com\lightbend\akka\sample\PongActor.class
-com\lightbend\akka\sample\GetRequest.class
-com\lightbend\akka\sample\KeyNotFoundMsg.class
-com\lightbend\akka\sample\SetRequest.class
-com\lightbend\akka\sample\LocalActor.class
-com\lightbend\akka\sample\BootAkka.class
