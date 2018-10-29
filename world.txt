@@ -1,1 +1,1 @@
-edit world.txt
+okay
