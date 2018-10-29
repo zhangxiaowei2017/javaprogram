@@ -60,16 +60,57 @@ public class ManyCoreBoot {
         /**
          * 要完成使用actor多核编程需要使用router，通过路由器将消息路由的actor对象上。
          */
-        ActorRef router = actorRefMap.get("workerRouter") ;
+//        ActorRef router = actorRefMap.get("workerRouter") ;
+//        ActorRef testActor = actorRefMap.get("testActor") ;
 //        router.tell(new akka.routing.Broadcast("broadcast"),ActorRef.noSender());
-        router.tell("1" , ActorRef.noSender());
-        router.tell("1" , ActorRef.noSender());
-        router.tell("2" , ActorRef.noSender());
+//        router.tell("1" , ActorRef.noSender());
+//        router.tell("1" , ActorRef.noSender());
+//        router.tell("2" , ActorRef.noSender());
 //        router.tell("3" , ActorRef.noSender());
-        System.out.println("路由器的路径为：" + router);
+//        testActor.tell("start", ActorRef.noSender());
     }
 
+
+    public static void dispatcher(){
+        ActorRef printActor = actorRefMap.get("printActor") ;
+        ActorRef blockingActor = actorRefMap.get("blockingActor") ;
+        for (int i = 0; i < 100; i++) {
+            blockingActor.tell(i, ActorRef.noSender());
+            printActor.tell(i, ActorRef.noSender());
+        }
+
+    }
+    public static void routerByGroup() {
+        ActorRef routerRef = actorRefMap.get("workerRouter") ;
+            routerRef.tell("1",ActorRef.noSender());
+            routerRef.tell("2",ActorRef.noSender());
+            routerRef.tell("3",ActorRef.noSender());
+            routerRef.tell("3",ActorRef.noSender());
+            routerRef.tell("3",ActorRef.noSender());
+            routerRef.tell("3",ActorRef.noSender());
+            routerRef.tell("3",ActorRef.noSender());
+            routerRef.tell("3",ActorRef.noSender());
+            routerRef.tell("3",ActorRef.noSender());
+            routerRef.tell("2",ActorRef.noSender());
+            routerRef.tell("2",ActorRef.noSender());
+            routerRef.tell("2",ActorRef.noSender());
+            routerRef.tell("2",ActorRef.noSender());
+            routerRef.tell("2",ActorRef.noSender());
+            routerRef.tell("2",ActorRef.noSender());
+            routerRef.tell("1",ActorRef.noSender());
+            routerRef.tell("1",ActorRef.noSender());
+            routerRef.tell("1",ActorRef.noSender());
+            routerRef.tell("1",ActorRef.noSender());
+            routerRef.tell("1",ActorRef.noSender());
+            routerRef.tell("1",ActorRef.noSender());
+            routerRef.tell("1",ActorRef.noSender());
+            routerRef.tell("1",ActorRef.noSender());
+
+    }
+
+
+
     public static void main(String[] args) {
-        manyCoresOnActor();
+        routerByGroup();
     }
 }
