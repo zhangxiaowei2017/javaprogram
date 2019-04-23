@@ -1,0 +1,14 @@
+
+spring:
+  freemarker:
+    template-loader-path: classpath:/templates/
+    prefer-file-system-access: false
+  application:
+    name: server02
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8080/eureka/
+    fetch-registry: true
+student:
+    name: dev-change
